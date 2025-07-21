@@ -45,7 +45,7 @@ A web-based tool for creating and managing board games, card games, and other ta
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/game-creator.git
+git clone https://github.com/Ferhadbb/Table-Game-Creator
 cd game-creator
 ```
 
