@@ -13,7 +13,6 @@ const PieceProperties: React.FC<PiecePropertiesProps> = ({
   onDelete,
 }) => {
   const [showColorPicker, setShowColorPicker] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
 
   const handleDiceRoll = () => {
     onUpdate({ value: Math.floor(Math.random() * 6) + 1 });

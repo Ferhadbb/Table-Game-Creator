@@ -9,7 +9,8 @@
     "test": "jest",
     "db:migrate": "sequelize-cli db:migrate",
     "db:migrate:undo": "sequelize-cli db:migrate:undo",
-    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all"
+    "db:migrate:undo:all": "sequelize-cli db:migrate:undo:all",
+    "migrate": "npx sequelize-cli db:migrate"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

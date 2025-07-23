@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Stage, Layer, Rect, Circle, Text, RegularPolygon, Star, Group } from 'react-konva';
 import { useParams, useNavigate } from 'react-router-dom';
-import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import GridLayer from '../components/GridLayer';
 import PathConnector from '../components/PathConnector';
@@ -53,7 +52,7 @@ export default function GameEditor() {
         clearTimeout(autoSaveTimerRef.current);
       }
     };
-  }, [id]);
+  }, [id, loadGame]);
 
   useEffect(() => {
     if (autoSaveTimerRef.current) {
@@ -65,7 +64,7 @@ export default function GameEditor() {
         handleSave(true);
       }, 2000);
     }
-  }, [title, pieces, rules]);
+  }, [title, pieces, rules, id, handleSave]);
 
   const loadGame = async () => {
     try {
@@ -98,7 +97,7 @@ export default function GameEditor() {
 
     let newPiece: GamePiece;
 
-    switch (selectedTool) {
+    switch (selectedTool) {rgr
       case 'tile':
         newPiece = {
           ...baseProps,
@@ -488,7 +487,6 @@ export default function GameEditor() {
     if (!tool || !stageContainerRef.current) return;
 
     const stageContainer = stageContainerRef.current;
-    const stage = stageRef.current;
     const containerRect = stageContainer.getBoundingClientRect();
     
     // Calculate position relative to stage
